@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CalcHub | 200 Free & Accurate Online Calculators</title>
+    <meta name="description" content="Comprehensive suite of exactly 200 free, fast, and accurate online calculators for mathematics, physics, finance, health, engineering, programming, and everyday productivity." />
+    <meta name="keywords" content="online calculators, free calculator, finance calculator, mortgage calculator, bmi calculator, scientific calculator, math solver, unit converter, physics calculator, programming calculators" />
+    <meta name="author" content="CalcHub" />
+    <link rel="icon" type="image/svg+xml" href="./public/favicon.svg" />
+    <link rel="canonical" href="https://calchub.netlify.app" />
+
+    <!-- Modern High-Class Typography (Plus Jakarta Sans & Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Pure Lightweight Vanilla CSS Stylesheet -->
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <!-- Schema.org WebApplication Metadata -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "CalcHub Online Calculators",
+      "url": "https://calchub.netlify.app",
+      "description": "Comprehensive all-in-one suite of 200 free online calculators for finance, health, math, engineering, physics, developer tools, and everyday utility.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+  </head>
+  <body>
+    <!-- Site Navigation Header -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <!-- Brand Logo -->
+        <a href="./index.html" class="brand-link" id="brand-home-link" title="CalcHub Home">
+          <div class="brand-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+          </div>
+          <span>Calc<span class="text-gradient">Hub</span></span>
+          <span class="brand-tag">200 PRO</span>
+        </a>
+
+        <!-- Site Navigation Links -->
+        <nav class="header-nav" aria-label="Main Navigation">
+          <a href="./index.html" class="nav-link active" id="nav-home-btn" title="Go to Home">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <span>Home</span>
+          </a>
+          <a href="#category-browser-section" class="nav-link" id="nav-categories-btn" title="Browse by Category">
+            <span>Categories</span>
+          </a>
+          <a href="#popular-cards-grid" class="nav-link" id="nav-popular-btn" title="Popular Tools">
+            <span>Popular</span>
+          </a>
+        </nav>
+
+        <!-- Search Bar Trigger -->
+        <button id="header-search-btn" class="search-trigger-btn" aria-label="Open search dialog">
+          <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <span>Search 200 calculators...</span>
+          </span>
+          <kbd class="search-kbd">Ctrl K</kbd>
+        </button>
+
+        <!-- Header Actions -->
+        <nav class="header-actions" aria-label="Header Tools">
+          <!-- Favorites -->
+          <button id="open-favorites-btn" class="icon-btn" title="Saved Favorites" aria-label="Open saved favorites">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <span id="fav-count-badge" class="icon-badge-counter">4</span>
+          </button>
+
+          <!-- History -->
+          <button id="open-history-btn" class="icon-btn" title="Calculation History" aria-label="Open calculation history">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span id="hist-count-badge" class="icon-badge-counter">0</span>
+          </button>
+
+          <!-- Theme Toggle -->
+          <button id="theme-toggle-btn" class="theme-toggle-btn" title="Toggle Light / Dark Mode" aria-label="Toggle theme">
+            <span class="theme-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            </span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Interactive Calculator Workspace (Visible ONLY when a calculator is open) -->
+      <section id="quick-calc-section" class="section calc-workspace-section" style="display: none;">
+        <div class="container">
+          <!-- Clean Calculator View Top Bar -->
+          <div class="calc-view-header">
+            <button type="button" id="btn-calc-back-home" class="btn btn-secondary btn-sm" title="Back to All Calculators">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+              <span>Back to All Calculators</span>
+            </button>
+            <div class="calc-view-meta">
+              <span id="calc-view-cat-badge" class="badge badge-popular">Category</span>
+            </div>
+          </div>
+
+          <!-- Hidden legacy strip (kept in DOM with display:none for script & test compatibility) -->
+          <div style="display: none !important;" aria-hidden="true">
+            <div class="section-header" style="text-align: center; margin-bottom: 1.5rem;">
+              <span class="badge badge-primary">Interactive Workspace</span>
+              <h2 class="section-title">Verified Calculation Engine</h2>
+              <p class="section-subtitle">Select any calculator below, enter your parameters, and click Calculate.</p>
+            </div>
+            <nav class="calc-breadcrumbs" aria-label="Breadcrumb Navigation">
+              <a href="./index.html" class="breadcrumb-link" id="bc-home" title="Back to Home">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                <span>Home</span>
+              </a>
+              <span class="breadcrumb-separator">/</span>
+              <a href="#category-browser-section" class="breadcrumb-link" id="bc-category">
+                <span id="bc-cat-name">Category</span>
+                <span id="bc-cat-count" class="pill-count" style="margin-left: 0.35rem; font-size: 0.72rem;">0</span>
+              </a>
+              <span class="breadcrumb-separator">/</span>
+              <span class="breadcrumb-current" id="bc-current-title">Active Calculator</span>
+            </nav>
+            <div class="calc-switcher-bar">
+              <div class="calc-switcher-nav">
+                <button type="button" id="btn-prev-calc" class="calc-nav-btn" title="Previous calculator">
+                  <span>← Previous</span>
+                  <span id="prev-calc-name" class="calc-nav-name">...</span>
+                </button>
+              </div>
+              <div class="calc-switcher-center">
+                <label for="calc-jump-select" class="calc-jump-label">Jump to any tool:</label>
+                <select id="calc-jump-select" class="form-select calc-jump-select" aria-label="Select and jump to any calculator">
+                  <!-- Dynamically populated with all 200 calculators grouped by category -->
+                </select>
+              </div>
+              <div class="calc-switcher-nav" style="text-align: right;">
+                <button type="button" id="btn-next-calc" class="calc-nav-btn" title="Next calculator">
+                  <span>Next →</span>
+                  <span id="next-calc-name" class="calc-nav-name">...</span>
+                </button>
+              </div>
+            </div>
+            <div role="tablist" class="calc-tabs">
+              <button role="tab" class="btn calc-tab-btn btn-primary" data-calc-id="basic-calculator">Basic Calculator</button>
+              <button role="tab" class="btn calc-tab-btn btn-secondary" data-calc-id="percentage-calculator">Percentage</button>
+              <button role="tab" class="btn calc-tab-btn btn-secondary" data-calc-id="bmi-calculator">BMI Fitness</button>
+              <button role="tab" class="btn calc-tab-btn btn-secondary" data-calc-id="age-calculator">Age Calculator</button>
+              <button role="tab" class="btn calc-tab-btn btn-secondary" data-calc-id="mortgage-calculator">Mortgage & Loans</button>
+              <button role="tab" class="btn calc-tab-btn btn-secondary" data-calc-id="unit-converter">Unit Converter</button>
+            </div>
+          </div>
+
+          <!-- Main Calculator Two-Column Grid -->
+          <div class="calculator-main-grid">
+            <!-- Left Column: Inputs Form -->
+            <article class="calc-card-container">
+              <div class="calc-card-title-bar">
+                <div>
+                  <h3 id="active-calc-title">Basic Calculator</h3>
+                  <p id="active-calc-desc" style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem;">Quick arithmetic for addition, subtraction, multiplication, and division.</p>
+                </div>
+                <button type="button" id="btn-reset" class="btn btn-secondary btn-sm" title="Reset fields to defaults">Reset</button>
+              </div>
+
+              <form id="calculator-form">
+                <div id="calculator-fields-container"></div>
+                <div id="calc-error-message" class="form-error" style="display: none;" role="alert"></div>
+                <button type="submit" id="btn-calculate" class="btn btn-primary btn-block">Calculate</button>
+              </form>
+            </article>
+
+            <!-- Right Column: Outputs -->
+            <aside id="calculator-result" class="results-card">
+              <div class="calc-card-title-bar" style="margin-bottom: 1rem;">
+                <h3 style="font-size: 1.1rem; font-weight: 700;">Calculation Results</h3>
+                <span class="badge badge-popular">Verified Math</span>
+              </div>
+
+              <!-- Primary Result Box -->
+              <div id="primary-result-box" class="primary-result-box">
+                <div id="primary-result-label" class="primary-result-label">Calculated Result</div>
+                <div id="primary-result-value" class="primary-result-value">0</div>
+                <div id="primary-result-subtext" class="primary-result-subtext" style="display: none;"></div>
+              </div>
+
+              <!-- Breakdown List -->
+              <div id="result-breakdown" class="result-breakdown-list"></div>
+
+              <!-- Calculation Steps -->
+              <div id="result-steps" class="steps-box"></div>
+
+              <!-- Action: Copy Result -->
+              <button type="button" id="btn-copy-result" class="btn btn-secondary btn-block" style="margin-top: 0.5rem;">
+                <span id="copy-result-text">Copy Result</span>
+              </button>
+            </aside>
+          </div>
+
+          <!-- Formula, Working & Explanations Card -->
+          <article id="calculator-explanation-card" class="formula-box">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1rem; font-weight: 700;">Formula & Calculation Methodology</h4>
+              <span id="active-calc-badge" class="badge badge-primary">VERIFIED MATH</span>
+            </div>
+            <p id="active-calc-formula" class="formula-code"></p>
+            <p id="active-calc-example-box" style="font-size: 0.88rem; color: var(--text-secondary);">
+              <strong>Standard Example:</strong> <span id="active-calc-example"></span>
+            </p>
+          </article>
+
+          <!-- Related Calculators Section -->
+          <section id="active-related-section" style="margin-top: 2rem;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+              <h4 style="font-size: 1.15rem; font-weight: 700;">Related Calculators</h4>
+              <span style="font-size: 0.82rem; color: var(--text-muted);">Quickly switch to companion tools</span>
+            </div>
+            <div id="active-related-grid" class="calculator-grid"></div>
+          </section>
+
+          <!-- Same-Category Quick Access Companion Tools -->
+          <section id="category-companion-section" class="category-companion-box" style="margin-top: 2rem;">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.75rem;">
+              <div>
+                <h4 style="font-size: 1.05rem; font-weight: 700; margin: 0 0 0.2rem;">
+                  More in <span id="companion-cat-title" class="text-gradient">Category</span>
+                </h4>
+                <p id="companion-cat-subtitle" style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">
+                  Direct links to all companion tools in this category
+                </p>
+              </div>
+              <button type="button" id="btn-view-all-category" class="btn btn-secondary btn-sm" style="display: inline-flex; align-items: center; gap: 0.4rem;">
+                <span id="btn-view-all-text">Browse category in full directory</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+              </button>
+            </div>
+            <div id="companion-calculators-list" class="companion-pills-list"></div>
+          </section>
+        </div>
+      </section>
+
+      <!-- Home View Container: wraps Hero, Category Browser, Popular, and Categories -->
+      <div id="home-view">
+        <!-- Hero Section -->
+        <section class="hero-section">
+          <div class="container hero-content">
+            <span class="badge badge-primary" style="margin-bottom: 1rem;">
+              200 Verified Online Calculators
+            </span>
+
+            <h1 class="hero-title">
+              All Your Calculators in <span class="text-gradient">One Clean Platform</span>
+            </h1>
+
+            <p class="hero-subtitle">
+              Fast, accurate, and completely free online calculators for mathematics, physics, finance, health, engineering, and digital development.
+            </p>
+
+            <!-- Hero Search Box -->
+            <div class="hero-search-box" id="hero-search-container">
+              <div class="hero-search-input-wrapper">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="hero-search-icon" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input
+                  type="text"
+                  id="hero-search-input"
+                  class="hero-search-input"
+                  placeholder="Search 200 calculators... (e.g. loan, age, percentage, currency, bmi, mortgage)"
+                  aria-label="Search all 200 calculators"
+                  autocomplete="off"
+                  spellcheck="false"
+                />
+                <button type="button" id="hero-clear-search-btn" class="hero-search-clear-btn" style="display: none;" title="Clear search" aria-label="Clear search">✕</button>
+                <button type="button" id="hero-search-btn" class="hero-search-submit-btn" title="Search calculators">
+                  <span>Search</span>
+                </button>
+              </div>
+
+              <!-- Instant Live Search Dropdown Suggestions -->
+              <div id="hero-search-dropdown" class="hero-search-dropdown" style="display: none;" role="listbox" aria-label="Search suggestions">
+                <div class="hero-dropdown-header">
+                  <span id="hero-dropdown-count">0 calculators found</span>
+                  <span class="hero-dropdown-tip">Click any tool or press Enter to open</span>
+                </div>
+                <div id="hero-dropdown-results" class="hero-dropdown-results"></div>
+              </div>
+            </div>
+
+            <!-- Category Filter Pills -->
+            <nav id="hero-category-pills" class="hero-pills" aria-label="Category Filters">
+              <button type="button" class="pill-btn hero-pill-btn active" data-cat-id="all">
+                <span>All Categories</span>
+                <span class="pill-count">200</span>
+              </button>
+              <button type="button" class="pill-btn hero-pill-btn" data-cat-id="basic-everyday">
+                <span>Basic & Everyday</span>
+                <span class="pill-count">9</span>
+              </button>
+              <button type="button" class="pill-btn hero-pill-btn" data-cat-id="math">
+                <span>Math & Algebra</span>
+                <span class="pill-count">23</span>
+              </button>
+              <button type="button" class="pill-btn hero-pill-btn" data-cat-id="finance">
+                <span>Finance & Money</span>
+                <span class="pill-count">26</span>
+              </button>
+              <button type="button" class="pill-btn hero-pill-btn" data-cat-id="health-fitness">
+                <span>Health & Fitness</span>
+                <span class="pill-count">15</span>
+              </button>
+              <button type="button" class="pill-btn hero-pill-btn" data-cat-id="geometry">
+                <span>Geometry & Trig</span>
+                <span class="pill-count">15</span>
+              </button>
+              <button type="button" class="pill-btn hero-pill-btn" data-cat-id="unit-converters">
+                <span>Unit Converters</span>
+                <span class="pill-count">17</span>
+              </button>
+              <button type="button" class="pill-btn hero-pill-btn" data-cat-id="date-time">
+                <span>Date & Time</span>
+                <span class="pill-count">11</span>
+              </button>
+              <button type="button" class="pill-btn hero-pill-btn" data-cat-id="construction">
+                <span>Construction & DIY</span>
+                <span class="pill-count">12</span>
+              </button>
+              <button type="button" class="pill-btn hero-pill-btn" data-cat-id="electrical">
+                <span>Electrical</span>
+                <span class="pill-count">9</span>
+              </button>
+              <button type="button" class="pill-btn hero-pill-btn" data-cat-id="physics">
+                <span>Physics</span>
+                <span class="pill-count">13</span>
+              </button>
+              <button type="button" class="pill-btn hero-pill-btn" data-cat-id="chemistry">
+                <span>Chemistry</span>
+                <span class="pill-count">8</span>
+              </button>
+              <button type="button" class="pill-btn hero-pill-btn" data-cat-id="statistics">
+                <span>Statistics</span>
+                <span class="pill-count">8</span>
+              </button>
+              <button type="button" class="pill-btn hero-pill-btn" data-cat-id="computer-data">
+                <span>Computer & Data</span>
+                <span class="pill-count">22</span>
+              </button>
+              <button type="button" class="pill-btn hero-pill-btn" data-cat-id="time-productivity">
+                <span>Productivity</span>
+                <span class="pill-count">7</span>
+              </button>
+              <button type="button" class="pill-btn hero-pill-btn" data-cat-id="business-marketing">
+                <span>Business</span>
+                <span class="pill-count">5</span>
+              </button>
+            </nav>
+
+            <!-- Stats Row -->
+            <div class="hero-stats">
+              <div class="stat-item">
+                <span class="stat-number">200</span>
+                <span class="stat-label">Unique Calculators</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">15</span>
+                <span class="stat-label">Specialized Categories</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Client-Side & Free</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Dedicated Category Calculators Directory Showcase -->
+        <section id="category-browser-section" class="section" style="background-color: var(--bg-surface-alt);">
+          <div class="container">
+            <div class="category-browser-header" style="margin-bottom: 1.75rem;">
+              <div style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                  <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
+                    <span id="cat-browser-badge" class="badge badge-primary">Category Directory</span>
+                    <span id="cat-browser-count-badge" class="badge badge-popular">200 Calculators</span>
+                  </div>
+                  <h2 id="cat-browser-title" class="section-title" style="margin-bottom: 0.25rem;">Explore All Calculators</h2>
+                  <p id="cat-browser-desc" class="section-subtitle" style="margin-bottom: 0;">
+                    Click any category pill above or choose a category below to explore all verified calculators.
+                  </p>
+                </div>
+
+                <div class="cat-browser-controls">
+                  <div class="cat-browser-search-wrapper" style="position: relative;">
+                    <input
+                      type="text"
+                      id="cat-browser-search-input"
+                      class="form-input cat-browser-input"
+                      placeholder="Filter in this category..."
+                    />
+                  </div>
+                  <select id="cat-browser-select" class="form-select cat-browser-select" aria-label="Select category to view all calculators">
+                    <!-- All 15 Categories dynamically populated -->
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- All Calculators of the Selected Category -->
+            <div id="category-calculators-grid" class="calculator-grid"></div>
+          </div>
+        </section>
+
+        <!-- Popular Calculators Grid Showcase -->
+        <section class="section">
+          <div class="container">
+            <div class="section-header">
+              <span class="badge badge-popular" style="margin-bottom: 0.5rem;">Trending Tools</span>
+              <h2 class="section-title">Popular Online Calculators</h2>
+              <p class="section-subtitle">The most frequently utilized calculations for finance, health, algebra, and conversions.</p>
+            </div>
+            <div id="popular-cards-grid" class="calculator-grid"></div>
+          </div>
+        </section>
+
+        <!-- All 15 Categories Grid -->
+        <section class="section">
+          <div class="container">
+            <div class="section-header">
+              <span class="badge badge-primary" style="margin-bottom: 0.5rem;">Complete Directory</span>
+              <h2 class="section-title">Explore by Category</h2>
+              <p class="section-subtitle">Over 15 specialized categories covering finance, mathematics, engineering, health, and science.</p>
+            </div>
+            <div id="categories-grid" class="category-grid"></div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top-grid">
+          <div>
+            <div class="brand-link" style="margin-bottom: 0.75rem;">
+              <div class="brand-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+              </div>
+              <span>Calc<span class="text-gradient">Hub</span></span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+              CalcHub provides exactly 200 verified, accurate, and instant calculators for mathematics, physics, finance, health, and programming.
+            </p>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <span class="badge badge-primary">100% Free</span>
+              <span class="badge badge-popular">200 Tools</span>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="footer-col-title">Mathematics</h4>
+            <ul class="footer-links">
+              <li><a href="#quick-calc-section" class="footer-link" onclick="renderActiveCalculator('basic-calculator')">Basic Calculator</a></li>
+              <li><a href="#quick-calc-section" class="footer-link" onclick="renderActiveCalculator('percentage-calculator')">Percentage Calculator</a></li>
+              <li><a href="#quick-calc-section" class="footer-link" onclick="renderActiveCalculator('fraction-calculator')">Fraction Calculator</a></li>
+              <li><a href="#quick-calc-section" class="footer-link" onclick="renderActiveCalculator('scientific-calculator')">Scientific Calculator</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="footer-col-title">Finance & Money</h4>
+            <ul class="footer-links">
+              <li><a href="#quick-calc-section" class="footer-link" onclick="renderActiveCalculator('mortgage-calculator')">Mortgage Calculator</a></li>
+              <li><a href="#quick-calc-section" class="footer-link" onclick="renderActiveCalculator('loan-calculator')">Loan Calculator</a></li>
+              <li><a href="#quick-calc-section" class="footer-link" onclick="renderActiveCalculator('compound-interest-calculator')">Compound Interest</a></li>
+              <li><a href="#quick-calc-section" class="footer-link" onclick="renderActiveCalculator('future-value-calculator')">Future Value</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="footer-col-title">Health & Fitness</h4>
+            <ul class="footer-links">
+              <li><a href="#quick-calc-section" class="footer-link" onclick="renderActiveCalculator('bmi-calculator')">BMI Calculator</a></li>
+              <li><a href="#quick-calc-section" class="footer-link" onclick="renderActiveCalculator('age-calculator')">Age Calculator</a></li>
+              <li><a href="#quick-calc-section" class="footer-link" onclick="renderActiveCalculator('calorie-calculator')">Calorie Deficit</a></li>
+              <li><a href="#quick-calc-section" class="footer-link" onclick="renderActiveCalculator('body-fat-calculator-navy')">Body Fat Percentage</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="footer-col-title">Platform</h4>
+            <ul class="footer-links">
+              <li><a href="#quick-calc-section" class="footer-link">Instant Workspace</a></li>
+              <li><a href="javascript:void(0)" class="footer-link" onclick="document.getElementById('open-favorites-btn').click()">Saved Favorites</a></li>
+              <li><a href="javascript:void(0)" class="footer-link" onclick="document.getElementById('open-history-btn').click()">Calculation History</a></li>
+              <li><a href="./public/sitemap.xml" target="_blank" class="footer-link">Sitemap Index</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>© 2026 CalcHub Platform. All 200 calculators verified for accuracy.</div>
+          <div style="display: flex; gap: 1rem;">
+            <span>Client-side Execution</span>
+            <span>•</span>
+            <span>Zero Tracking</span>
+            <span>•</span>
+            <span>Mobile Optimized</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Favorites Drawer -->
+    <div id="favorites-drawer" class="drawer">
+      <div class="drawer-header">
+        <h3 class="drawer-title">Saved Favorites</h3>
+        <button id="close-favorites-btn" class="drawer-close" aria-label="Close favorites drawer">✕</button>
+      </div>
+      <div id="favorites-list-container" class="drawer-content"></div>
+    </div>
+
+    <!-- History Drawer -->
+    <div id="history-drawer" class="drawer">
+      <div class="drawer-header">
+        <h3 class="drawer-title">Calculation History</h3>
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+          <button id="clear-history-btn" class="btn btn-secondary btn-sm">Clear</button>
+          <button id="close-history-btn" class="drawer-close" aria-label="Close history drawer">✕</button>
+        </div>
+      </div>
+      <div id="history-list-container" class="drawer-content"></div>
+    </div>
+
+    <!-- Search Modal Dialog (Ctrl + K) -->
+    <div id="search-modal" class="modal-overlay">
+      <div class="search-modal-content">
+        <div class="modal-search-header">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-muted);"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input
+            type="text"
+            id="modal-search-input"
+            class="modal-search-input"
+            placeholder="Search all 200 calculators by name, keywords, formula..."
+            aria-label="Search all calculators"
+          />
+          <button type="button" id="modal-clear-search-btn" class="drawer-close" style="display: none;" title="Clear search">✕</button>
+          <button type="button" id="close-search-btn" class="drawer-close" title="Close dialog">✕</button>
+        </div>
+
+        <nav id="modal-category-filters" class="modal-category-filters" aria-label="Category quick filter"></nav>
+
+        <div class="modal-status-bar">
+          <span id="modal-search-count">Showing all 200 calculators</span>
+          <span>Click any tool to open instantly</span>
+        </div>
+
+        <div id="search-results-list" class="modal-results-body"></div>
+
+        <footer class="modal-shortcuts-footer">
+          <div class="modal-shortcut-item"><kbd>↑</kbd><kbd>↓</kbd> <span>Navigate</span></div>
+          <div class="modal-shortcut-item"><kbd>↵</kbd> <span>Open</span></div>
+          <div class="modal-shortcut-item"><kbd>ESC</kbd> <span>Close</span></div>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Toast Alerts -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Scripts: Data Registry -> Calculation Engines -> App Logic -->
+    <script src="./js/calculators-data.js"></script>
+    <script src="./js/calculator-engines.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
