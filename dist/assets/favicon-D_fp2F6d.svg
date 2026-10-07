@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+    <linearGradient id="screenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+  <rect x="6" y="4" width="36" height="40" rx="10" fill="url(#primaryGrad)" />
+  <rect x="11" y="9" width="26" height="10" rx="4" fill="url(#screenGrad)" />
+  <!-- Screen display lines -->
+  <rect x="15" y="13" width="18" height="2.5" rx="1.2" fill="#38bdf8" />
+  <!-- Keypad buttons -->
+  <rect x="11" y="23" width="6" height="5" rx="2" fill="white" fill-opacity="0.25" />
+  <rect x="21" y="23" width="6" height="5" rx="2" fill="white" fill-opacity="0.25" />
+  <rect x="31" y="23" width="6" height="5" rx="2" fill="white" fill-opacity="0.4" />
+
+  <rect x="11" y="31" width="6" height="5" rx="2" fill="white" fill-opacity="0.25" />
+  <rect x="21" y="31" width="6" height="5" rx="2" fill="white" fill-opacity="0.25" />
+  <rect x="31" y="31" width="6" height="5" rx="2" fill="#38bdf8" />
+
+  <rect x="11" y="38" width="16" height="3" rx="1.5" fill="white" fill-opacity="0.3" />
+  <rect x="31" y="38" width="6" height="3" rx="1.5" fill="#a5f3fc" />
+</svg>
